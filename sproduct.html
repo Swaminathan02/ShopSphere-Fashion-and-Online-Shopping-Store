@@ -18,6 +18,8 @@
     />
   </head>
   <body>
+    <div id="cart-message" class="cart-message">Item added to cart!</div>
+
     <section id="header">
       <a href="#"><img src="img/logo.png" class="logo" alt="None" /></a>
 
@@ -30,7 +32,9 @@
             >
           </li>
           <li>
-            <a href="shop.html"><i class="fa-solid fa-store fa-1x"></i> Shop</a>
+            <a class="active" href="shop.html"
+              ><i class="fa-solid fa-store fa-1x"></i> Shop</a
+            >
           </li>
           <li>
             <a href="blog.html"><i class="fa-solid fa-blog"></i> Blog</a>
@@ -46,7 +50,7 @@
             >
           </li>
           <li id="lg-bag">
-            <a class="active" href="cart.html"
+            <a href="cart.html"
               ><i class="fa-solid fa-cart-plus fa-1x"></i> Cart</a
             >
           </li>
@@ -66,52 +70,165 @@
       </div>
     </section>
 
-    <section id="page-header" class="cart-head">
-      <h2>My Cart</h2>
-      <p>See the products that you have added on your Cart</p>
-      <br />
-    </section>
-
-    <section id="cart" class="section-p1">
-      <h3>
-        Apply the Coupon Code <span>"SHOPSP"</span> on Shopping to get Flat
-        <a>$50 Off</a>.
-      </h3>
-      <div class="coupon">
-        <input
-          type="text"
-          id="coupon-code"
-          placeholder="Enter coupon code if available"
-        />
-        <button id="apply-coupon">Apply</button>
-        <p id="coupon-msg"></p>
-      </div>
-      <div id="cart-items"></div>
-      <button class="buy" id="buy-now">Buy Now</button>
-      <div id="payment-modal">
-        <div
-          style="
-            background: #fff;
-            padding: 32px;
-            border-radius: 8px;
-            max-width: 400px;
-            margin: auto;
-          "
-        >
-          <h3>Checkout</h3>
-          <form id="payment-form">
-            <div id="card-element"></div>
-            <button id="submit-payment" type="submit">Pay</button>
-            <div id="payment-message"></div>
-          </form>
-          <button
-            onclick="document.getElementById('payment-modal').style.display='Order Placed!'"
-          >
-            Cancel
-          </button>
+    <section id="pro-det" class="section-p1">
+      <div class="single-pro-img">
+        <img src="img/products/f1.jpg" width="100%" id="main-img" />
+        <div class="small-img-grp">
+          <div class="small-img-col">
+            <img src="img/products/f1.jpg" width="100%" class="small-img" />
+          </div>
+          <div class="small-img-col">
+            <img src="img/products/f2.jpg" width="100%" class="small-img" />
+          </div>
+          <div class="small-img-col">
+            <img src="img/products/f3.jpg" width="100%" class="small-img" />
+          </div>
+          <div class="small-img-col">
+            <img src="img/products/f5.jpg" width="100%" class="small-img" />
+          </div>
         </div>
       </div>
-      <script src="https://js.stripe.com/v3/"></script>
+      <div class="single-pro-det">
+        <h6>Home/Shirt</h6>
+        <h4>Tropical Pop Short Shirts</h4>
+        <h2 class="cost">$79</h2>
+        <select id="size-select" required>
+          <option value="">Select Size</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+        </select>
+        <br />
+        <input type="number" value="1" />
+        <button
+          class="add-to-cart"
+          data-name="Tropical Pop Short Shirts"
+          data-price="79"
+          data-img="img/products/f1.jpg"
+        >
+          Add to cart
+        </button>
+
+        <h4>Product Details</h4>
+        <span>
+          Make a bold statement with the Tropical Pop Short Shirt, your go-to
+          for sunny days and standout style. Featuring a lively blend of mustard
+          yellow, teal, red, and white with abstract tropical floral motifs,
+          this shirt captures the essence of carefree island vibes and artistic
+          flair. The soft, lightweight fabric and relaxed short-sleeve design
+          offer maximum comfort, making it ideal for beach outings, summer
+          parties, or laid-back weekends. The open collar and button-up front
+          add a classic touch to this modern, playful piece.
+        </span>
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>Featured Products</h2>
+      <p>New styles just landed in store</p>
+      <div class="pro-container">
+        <div class="pro">
+          <img src="img/products/n1.jpg" />
+          <div class="des">
+            <span>AzureWear</span>
+            <h5>Coastal Breeze Linen Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.7
+            </div>
+            <h4>$79</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Coastal Breeze Linen Shirts"
+            data-price="79"
+            data-img="img/products/n1.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+        <div class="pro">
+          <img src="img/products/n2.jpg" />
+          <div class="des">
+            <span>UrbanPatch</span>
+            <h5>Twilight Check Casual Shirt</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 4.1
+            </div>
+            <h4>$89</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Twilight Check Casual Shirt"
+            data-price="89"
+            data-img="img/products/n2.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+        <div class="pro">
+          <img src="img/products/n3.jpg" />
+          <div class="des">
+            <span>Otto</span>
+            <h5>Minimalist Button-Down Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.5
+            </div>
+            <h4>$56</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Minimalist Button-Down Shirts"
+            data-price="56"
+            data-img="img/products/n3.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+        <div class="pro">
+          <img src="img/products/n4.jpg" class="allen" />
+          <div class="des">
+            <span>Allen Solly</span>
+            <h5>Graphic Cotton Shirt</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 4.9
+            </div>
+            <h4>$99</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Graphic Cotton Shirt"
+            data-price="99"
+            data-img="img/products/n4.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+      </div>
     </section>
 
     <section id="banner4">
@@ -168,8 +285,34 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
+      var mainimg = document.getElementById("main-img");
+      var smallimg = document.getElementsByClassName("small-img");
+      var cost = document.getElementsByClassName("cost")[0];
+      const value = ["$79", "$89", "$80", "$79"];
+      for (let i = 0; i < 4; i++) {
+        smallimg[i].onclick = function () {
+          mainimg.src = smallimg[i].src;
+          cost.innerText = value[i];
+        };
+      }
+    </script>
+
+    <script src="script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var user = JSON.parse(localStorage.getItem("user"));
+        var cartLink = document.querySelector("#lg-bag a");
+        if (cartLink) {
+          cartLink.addEventListener("click", function (e) {
+            if (!user || !user.username) {
+              e.preventDefault();
+              alert("Please login/signup to access your cart!");
+            }
+          });
+        }
+      });
       let user = JSON.parse(localStorage.getItem("user"));
       function updateNavbarAuth() {
         const loginNav = document.getElementById("login-signup-nav");

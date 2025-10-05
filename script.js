@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   addToCartButtons.forEach((button) => {
     button.addEventListener("click", async function (e) {
       e.preventDefault();
+      e.stopPropagation();
       if (!user || !user.username) {
         showCartMessage("Please login/signup to add items to cart!", true);
         return;
@@ -217,7 +218,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       paymentModal.style.display = "flex";
       if (!stripe) {
-        stripe = Stripe("pk_test_51SEoXc1PonzzBBYV0OdBPibfmgpl0ToCCLKf6FWf07YDRVaWfSAMt5fpDRbsdFlpEjxHJV7svPVEjd3kQvALGBzH00etKusqRC"); 
+        stripe = Stripe(
+          "pk_test_51SEoXc1PonzzBBYV0OdBPibfmgpl0ToCCLKf6FWf07YDRVaWfSAMt5fpDRbsdFlpEjxHJV7svPVEjd3kQvALGBzH00etKusqRC"
+        );
         elements = stripe.elements();
         card = elements.create("card");
         card.mount("#card-element");
