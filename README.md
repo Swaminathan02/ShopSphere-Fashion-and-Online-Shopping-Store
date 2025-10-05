@@ -1,29 +1,56 @@
-# 🛒 ShopSphere – Fashion and LifeStyle Online Store
+# 🛒 ShopSphere – Fashion and Lifestyle Online Store
 
-**ShopSphere** is a responsive and visually appealing online shopping website built with HTML, CSS, JavaScript and local storage. It features a complete front-end experience with product listings, a blog, a shopping cart system, and detailed product views.
+**ShopSphere** is a full-stack, responsive, and feature-rich **E-Commerce web application** built with a modular front-end and back-end architecture.  
+It offers a polished user interface, seamless navigation, and dynamic functionality — from browsing products to secure checkout.
 
-## 🌐 Live Preview
-[View Website](https://swaminathan02.github.io/ShopSphere--Fashion-and-LifeStyle-Online-Store/)
+---
 
-## ✨ Features
-- 🏠 **Homepage** – Promotional banners & featured products  
-- 🛍️ **Shop Page** – Product catalog with filtering and cart integration  
-- 📄 **Single Product Page** – Detailed view with image previews and size selection  
-- 🛒 **Cart System** – Add/remove items, apply coupon (`SHOPSP`), calculate total  
-- 📰 **Blog Section** – Fashion tips, product highlights, and style ideas  
-- 🙋 **About & Contact** – Business details, map, team contacts, and inquiry form  
-- 🔐 **Privacy Page and Terms & Condition Page** – Clearly outlined data policies
-- ✅ **Responsive** – Mobile-ready design and layout  
+## 🌐 Live Preview  
+[🔗 View Website](https://shopsphere-fashion-and-online-shopping.onrender.com/)
 
-## Technologies Used
-- HTML5 & CSS3  
-- JavaScript (LocalStorage for cart management)  
-- FontAwesome Icons  
-- Google Fonts  
+---
+
+## ✨ Features  
+
+- 🏠 **Homepage** – Promotional banners, featured products, and smooth navigation  
+- 🛍️ **Shop Page** – Dynamic product catalog integrated with MongoDB and filtering options  
+- 📄 **Single Product Page** – Detailed product view with image previews, size selection, and star ratings  
+- 🛒 **Persistent Cart System** – Add/remove items with quantities stored in MongoDB  
+- 💳 **Stripe Payment Integration** – Secure and real-time checkout using Stripe API  
+- 💸 **Coupon System** – Apply `SHOPSP` to get $50 off on orders ≥ $50  
+- 🔐 **User Authentication** – Secure sign-up/login using JWT and password hashing  
+- 📰 **Blog Section** – Fashion tips, product highlights, and style guides  
+- 🙋 **About & Contact Pages** – Business overview, team details, and inquiry form  
+- ⚖️ **Privacy Policy & Terms** – Transparent and clearly outlined data policies  
+- 📱 **Fully Responsive** – Optimized layout for mobile, tablet, and desktop  
+
+---
+
+## 🧠 Highlights  
+
+- Developed a **full-stack responsive E-Commerce web application** with a polished UI and seamless navigation.  
+- Implemented a **dynamic product catalog** and **persistent shopping cart** using **MongoDB**.  
+- Integrated **coupon functionality** and **Stripe payment gateway** for secure transactions.  
+- Built **secure user authentication** and **RESTful APIs** using **Node.js**, **Express.js**, and **MongoDB** for robust backend operations.  
+- Deployed with a **modular front-end and back-end architecture**, ensuring scalability and easy future enhancements.  
+
+---
+
+## 🛠️ Technologies Used  
+
+### 🖥️ Frontend  
+- HTML5 & CSS3
+- JavaScript 
+- FontAwesome & Google Fonts
 - Responsive Design (Media Queries)
 
-## 💡 Highlights
-- Coupon functionality: Apply `SHOPSP` for $50 off on orders ≥ $50  
-- Live cart updates using localStorage  
-- Interactive product pages with image gallery & star ratings  
-- Clean UI with scroll animation and hover effects
+### ⚙️ Backend  
+- Node.js & Express.js
+- MongoDB (Mongoose ODM)
+- Stripe Payment Integration  
+
+### 🚀 Deployment  
+- Render (for hosting)
+- GitHub (for version control)  
+
+---
