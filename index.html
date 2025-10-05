@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" sizes="64x64" href="/img/icons.jpeg" />
+    <title>Online Shopping</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Monsieur+La+Doulaise&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="cart-message" class="cart-message">Item added to cart!</div>
+
+    <section id="header">
+      <a href="#"><img src="./img/logo.png" class="logo" alt="None" /></a>
+
+      <div>
+        <ul id="navbar">
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+          <li>
+            <a class="active" href="index.html"
+              ><i class="fa-solid fa-house fa-1x"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="shop.html"><i class="fa-solid fa-store fa-1x"></i> Shop</a>
+          </li>
+          <li>
+            <a href="blog.html"><i class="fa-solid fa-blog"></i> Blog</a>
+          </li>
+          <li>
+            <a href="about.html"
+              ><i class="fa-solid fa-address-card fa-1x"></i> About</a
+            >
+          </li>
+          <li>
+            <a href="contact.html"
+              ><i class="fa-solid fa-phone fa-1x"></i> Contact</a
+            >
+          </li>
+          <li id="lg-bag">
+            <a href="cart.html" id="cart-link"
+              ><i class="fa-solid fa-cart-plus fa-1x"></i> Cart</a
+            >
+          </li>
+          <li id="login-signup-nav">
+            <a href="#" id="login-btn">Login</a> /
+            <a href="#" id="signup-btn">Signup</a>
+          </li>
+          <li id="user-nav" style="display: none">
+            <span id="user-name" style="font-weight: bold"></span>
+            <a href="#" id="logout-btn" style="margin-left: 16px">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
+        <i id="bar" class="fas fa-outdent fa-2x"></i>
+      </div>
+    </section>
+
+    <section id="hero">
+      <h4>Trade-in-offer</h4>
+      <h2>Super Value Deals</h2>
+      <h1>On All Products</h1>
+      <p>Save More with Coupons & up to Flat 60% Off</p>
+      <br />
+      <a href="shop.html"><button>Click Here to Shop Now</button></a>
+    </section>
+
+    <section id="feature" class="section-p1">
+      <div class="fe-box">
+        <img src="img/features/f1.png" />
+        <h6>Free Shipping</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f2.png" />
+        <h6>Online Order</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f3.png" />
+        <h6>Save Money</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f4.png" />
+        <h6>Promotions</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f5.png" />
+        <h6>Happy Sell</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f6.png" />
+        <h6>24/7 Support</h6>
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>Featured Products</h2>
+      <p>Summer Collection New Modern Design</p>
+      <div class="pro-container">
+        <div class="pro">
+          <img src="img/products/f1.jpg" />
+          <div class="des">
+            <span>Adidas</span>
+            <h5>Tropical Pop Short Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.7
+            </div>
+            <h4>$79</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Tropical Pop Short Shirts"
+            data-price="79"
+            data-img="img/products/f1.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/f2.jpg" />
+          <div class="des">
+            <span>Wrogn</span>
+            <h5>Palm Bloom Resort Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 3.9
+            </div>
+            <h4>$89</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Palm Bloom Resort Shirts"
+            data-price="89"
+            data-img="img/products/f2.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/f3.jpg" />
+          <div class="des">
+            <span>Peter England</span>
+            <h5>Enchanted Floral Elegance Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.5
+            </div>
+            <h4>$56</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Enchanted Floral Elegance
+ Shirts"
+            data-price="56"
+            data-img="img/products/f3.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/f4.jpg" class="allen" />
+          <div class="des">
+            <span>Allen Solly</span>
+            <h5>Simple Cotton T-shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 4.8
+            </div>
+            <h4>$99</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Simple Cotton T-shirts"
+            data-price="99"
+            data-img="img/products/f4.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/f5.jpg" />
+          <div class="des">
+            <span>Calvin Klein</span>
+            <h5>Cartoon Astronaut Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Cartoon Astronaut Shirts"
+            data-price="78"
+            data-img="img/products/f5.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/f6.jpg" />
+          <div class="des">
+            <span>Puma</span>
+            <h5>DualTone Waffle Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.6
+            </div>
+            <h4>$105</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="DualTone Waffle Shirts"
+            data-price="105"
+            data-img="img/products/f6.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/f7.jpg" />
+          <div class="des">
+            <span>WildPetal</span>
+            <h5>Floral Embroidered Linen Palazzo Pants</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$60</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Floral Embroidered Linen Palazzo Pants"
+            data-price="60"
+            data-img="img/products/f7.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/f8.jpg" />
+          <div class="des">
+            <span>LiverPool</span>
+            <h5>Loosy Oversized T-shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 3.7
+            </div>
+            <h4>$82</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Loosy Oversized T-shirts"
+            data-price="82"
+            data-img="img/products/f8.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="banner" class="section-m1">
+      <h4>Repair Services</h4>
+      <h2>Up to <span>40% Off</span> - All T-shirts and Accessories</h2>
+      <button class="normal">Explore More</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>New Arrivals</h2>
+      <p>New styles just landed in store</p>
+      <div class="pro-container">
+        <div class="pro">
+          <img src="img/products/n1.jpg" />
+          <div class="des">
+            <span>AzureWear</span>
+            <h5>Coastal Breeze Linen Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.7
+            </div>
+            <h4>$79</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Coastal Breeze Linen Shirts"
+            data-price="79"
+            data-img="img/products/n1.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n2.jpg" />
+          <div class="des">
+            <span>UrbanPatch</span>
+            <h5>Twilight Check Casual Shirt</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 4.1
+            </div>
+            <h4>$89</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Twilight Check Casual Shirt"
+            data-price="89"
+            data-img="img/products/n2.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n3.jpg" />
+          <div class="des">
+            <span>Otto</span>
+            <h5>Minimalist Button-Down Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.5
+            </div>
+            <h4>$56</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Minimalist Button-Down Shirts"
+            data-price="56"
+            data-img="img/products/n3.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n4.jpg" class="allen" />
+          <div class="des">
+            <span>Allen Solly</span>
+            <h5>Graphic Cotton Shirt</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 4.9
+            </div>
+            <h4>$99</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Graphic Cotton Shirt"
+            data-price="99"
+            data-img="img/products/n4.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n5.jpg" />
+          <div class="des">
+            <span>DenimRoot</span>
+            <h5>Classic Indigo Everyday Shirt</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 4.0
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Classic Indigo Everyday Shirt"
+            data-price="78"
+            data-img="img/products/n5.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n6.jpg" />
+          <div class="des">
+            <span>Puma</span>
+            <h5>DualTone Waffle Pants</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 4.6
+            </div>
+            <h4>$105</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="DualTone Waffle Pants"
+            data-price="105"
+            data-img="img/products/n6.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n7.jpg" />
+          <div class="des">
+            <span>CoastThread</span>
+            <h5>Sandstone Utility Button Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> 3.2
+            </div>
+            <h4>$60</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Sandstone Utility Button Shirts"
+            data-price="60"
+            data-img="img/products/n7.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n8.jpg" />
+          <div class="des">
+            <span>WildPetal</span>
+            <h5>Zen Collar Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fa-solid fa-star-half"></i> 3.7
+            </div>
+            <h4>$82</h4>
+          </div>
+          <a
+            href="#"
+            class="add-to-cart"
+            data-name="Zen Collar Shirts"
+            data-price="82"
+            data-img="img/products/n8.jpg"
+          >
+            <i class="fa-solid fa-cart-plus cart"></i>
+            <div class="hover-text">Add to cart</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sm-banner" class="section-p1">
+      <div class="banner-box animate-towards-right">
+        <h4>Crazy Deals</h4>
+        <h2>Buy 2 Get 1 Free</h2>
+        <p>Timeless classics now on sale at ShopSphere</p>
+        <button>Learn More</button>
+      </div>
+      <div class="banner-box box2 animate-towards-left">
+        <h4>Spring/Summer</h4>
+        <h2>Upcoming Season</h2>
+        <p>Step into the new season with style with us</p>
+        <button>Show Collection</button>
+      </div>
+    </section>
+
+    <section id="banner3">
+      <div class="banner-box animate-towards-left">
+        <h2>Seasonal Sale</h2>
+        <h3 style="background-color: red; color: black">
+          Winter Collection - 35% Off
+        </h3>
+      </div>
+      <div class="banner-box boxs2 animate-fade">
+        <h2>New Footware Collections</h2>
+        <h3 style="background-color: greenyellow; color: black">
+          Summer/Spring 2025
+        </h3>
+      </div>
+      <div class="banner-box boxs3 animate-towards-right">
+        <h2>T-Shirts</h2>
+        <h3 style="background-color: blue; color: black">New Trendy Prints</h3>
+      </div>
+    </section>
+
+    <section id="banner4">
+      <div class="texts">
+        <h4>Sign up for Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+      <div class="email-sign">
+        <input class="email" type="text" placeholder=" Your Email-ID" /><button
+          class="sign"
+        >
+          Sign Up
+        </button>
+      </div>
+    </section>
+
+    <footer id="footer" class="section-p1">
+      <div class="col">
+        <img class="logo" src="img/logo.png" />
+        <h4>Contact</h4>
+        <h6><strong>Address: </strong> 22 Main St, New York, NY 10003, USA</h6>
+        <h6><strong>Phone: </strong>+01 2224 322</h6>
+        <h6><strong>Working Slots: </strong> 10:00 - 18:30, Mon-Sat</h6>
+        <div class="follow">
+          <h6>Follow Us On</h6>
+          <icon>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+          </icon>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="about.html">About us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms and Condition</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="cart.html">View Cart</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="col install">
+        <h4>Secured Payment Gateways</h4>
+        <img src="img/pay/pay.png" />
+      </div>
+      <div class="copyright">
+        <p>© 2025, Happy Shopping - ShopSphere By Swami</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      let user = JSON.parse(localStorage.getItem("user"));
+      function updateNavbarAuth() {
+        const loginNav = document.getElementById("login-signup-nav");
+        const userNav = document.getElementById("user-nav");
+        const userNameSpan = document.getElementById("user-name");
+        if (user && user.username) {
+          loginNav.style.display = "none";
+          userNav.style.display = "";
+          userNameSpan.textContent = `👋 Hello ${user.username}!`;
+        } else {
+          loginNav.style.display = "";
+          userNav.style.display = "none";
+        }
+      }
+      function updateCartAccessHandler() {
+        var cartLink = document.querySelector("#lg-bag a");
+        if (cartLink) {
+          cartLink.onclick = function (e) {
+            let userNow = JSON.parse(localStorage.getItem("user"));
+            if (!userNow || !userNow.username) {
+              e.preventDefault();
+              alert("Please login/signup to access your cart!");
+            }
+          };
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        updateCartAccessHandler();
+      });
+      updateNavbarAuth();
+
+      document.getElementById("login-btn").onclick = function () {
+        const username = prompt("Enter username:");
+        const password = prompt("Enter password:");
+        if (!username || !password)
+          return alert("Username and password required");
+        fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.message === "Login successful") {
+              user = { username };
+              localStorage.setItem("user", JSON.stringify(user));
+              updateNavbarAuth();
+              updateCartAccessHandler();
+              alert("Login successful");
+            } else {
+              alert(data.message || "Login failed");
+            }
+          });
+      };
+
+      document.getElementById("signup-btn").onclick = function () {
+        const username = prompt("Choose username:");
+        const password = prompt("Choose password:");
+        if (!username || !password)
+          return alert("Username and password required");
+        fetch("/api/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.message === "Signup successful") {
+              user = { username };
+              localStorage.setItem("user", JSON.stringify(user));
+              updateNavbarAuth();
+              updateCartAccessHandler();
+              alert("Signup successful");
+            } else {
+              alert(data.message || "Signup failed");
+            }
+          });
+      };
+
+      document.getElementById("logout-btn").onclick = function () {
+        user = null;
+        localStorage.removeItem("user");
+        updateNavbarAuth();
+        updateCartAccessHandler();
+        alert("Logged out");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" sizes="64x64" href="/img/icons.jpeg" />
+    <title>Online Shopping</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Monsieur+La+Doulaise&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="img/logo.png" class="logo" alt="None" /></a>
+
+      <div>
+        <ul id="navbar">
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+          <li>
+            <a href="index.html"
+              ><i class="fa-solid fa-house fa-1x"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="shop.html"><i class="fa-solid fa-store fa-1x"></i> Shop</a>
+          </li>
+          <li>
+            <a class="active" href="blog.html"
+              ><i class="fa-solid fa-blog"></i> Blog</a
+            >
+          </li>
+          <li>
+            <a href="about.html"
+              ><i class="fa-solid fa-address-card fa-1x"></i> About</a
+            >
+          </li>
+          <li>
+            <a href="contact.html"
+              ><i class="fa-solid fa-phone fa-1x"></i> Contact</a
+            >
+          </li>
+          <li id="lg-bag">
+            <a href="cart.html"
+              ><i class="fa-solid fa-cart-plus fa-1x"></i> Cart</a
+            >
+          </li>
+          <li id="login-signup-nav">
+            <a href="#" id="login-btn">Login</a> /
+            <a href="#" id="signup-btn">Signup</a>
+          </li>
+          <li id="user-nav" style="display: none">
+            <span id="user-name" style="font-weight: bold"></span
+            ><a href="#" id="logout-btn" style="margin-left: 16px">Logout</a>
+          </li>
+          <script>
+            // Restrict cart access
+            document.addEventListener("DOMContentLoaded", function () {
+              var user = JSON.parse(localStorage.getItem("user"));
+              const cartLink = document.getElementById("cart-link");
+              if (cartLink) {
+                cartLink.onclick = function (e) {
+                  if (!user || !user.username) {
+                    e.preventDefault();
+                    alert("Please login/signup to access your cart!");
+                  }
+                };
+              }
+            });
+            let user = JSON.parse(localStorage.getItem("user"));
+            function updateNavbarAuth() {
+              const loginNav = document.getElementById("login-signup-nav");
+              const userNav = document.getElementById("user-nav");
+              const userNameSpan = document.getElementById("user-name");
+              if (user && user.username) {
+                loginNav.style.display = "none";
+                userNav.style.display = "";
+                userNameSpan.textContent = `👋 Hello ${user.username}!`;
+              } else {
+                loginNav.style.display = "";
+                userNav.style.display = "none";
+              }
+            }
+            updateNavbarAuth();
+
+            document.getElementById("login-btn").onclick = function () {
+              const username = prompt("Enter username:");
+              const password = prompt("Enter password:");
+              if (!username || !password)
+                return alert("Username and password required");
+              fetch("/api/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password }),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.message === "Login successful") {
+                    user = { username };
+                    localStorage.setItem("user", JSON.stringify(user));
+                    updateNavbarAuth();
+                    alert("Login successful");
+                  } else {
+                    alert(data.message || "Login failed");
+                  }
+                });
+            };
+
+            document.getElementById("signup-btn").onclick = function () {
+              const username = prompt("Choose username:");
+              const password = prompt("Choose password:");
+              if (!username || !password)
+                return alert("Username and password required");
+              fetch("/api/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password }),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  if (data.message === "Signup successful") {
+                    user = { username };
+                    localStorage.setItem("user", JSON.stringify(user));
+                    updateNavbarAuth();
+                    alert("Signup successful");
+                  } else {
+                    alert(data.message || "Signup failed");
+                  }
+                });
+            };
+
+            document.getElementById("logout-btn").onclick = function () {
+              user = null;
+              localStorage.removeItem("user");
+              updateNavbarAuth();
+              alert("Logged out");
+              window.location.href = "index.html";
+            };
+          </script>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-cart-plus fa-2x"></i></a>
+        <i id="bar" class="fas fa-outdent fa-2x"></i>
+      </div>
+    </section>
+
+    <section id="page-header" class="blog-head">
+      <h2>Readmore</h2>
+      <p>Read all case studies about our products!</p>
+      <br />
+    </section>
+
+    <section id="blog">
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="img/blog/b1.jpg" />
+        </div>
+        <div class="blog-det">
+          <h4>Effortless Elegance: The Allure of the Sheer Back Dress</h4>
+          <p>
+            Minimalism meets sophistication in this open-back sheer dress,
+            effortlessly tied at the nape. Perfect for evening affairs or a
+            high-fashion moment, this piece celebrates femininity with a modern
+            edge. Learn how to style sheer fabrics with confidence and grace.
+          </p>
+          <a href="#">Continue Reading</a>
+        </div>
+        <h1>13/01</h1>
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="img/blog/b2.jpg" />
+        </div>
+        <div class="blog-det">
+          <h4>The New Power Pair: Neutral Tones & Clean Silhouettes</h4>
+          <p>
+            Black and nude hues take center stage with sharp tailoring and soft
+            fabrics. This duo defines contemporary style, embracing contrast
+            while maintaining cohesion. Discover how to master monochrome with a
+            twist for your everyday wardrobe.
+          </p>
+          <a href="#">Continue Reading</a>
+        </div>
+        <h1>25/03</h1>
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="img/blog/b3.jpg" />
+        </div>
+        <div class="blog-det">
+          <h4>Inside the Modern Boutique: Where Color Meets Curation</h4>
+          <p>
+            Step into a fashion-forward boutique where color-blocking and layout
+            design guide your shopping experience. From pastel basics to
+            statement outerwear, see how visual merchandising shapes your
+            choices—and your style.
+          </p>
+          <a href="#">Continue Reading</a>
+        </div>
+        <h1>19/04</h1>
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="img/blog/b4.jpg" />
+        </div>
+        <div class="blog-det">
+          <h4>Cozy Meets Chic: Fall Layers You’ll Live In</h4>
+          <p>
+            Comfort never looked so good. These laid-back layers are perfect for
+            chilly days and casual outings, combining structured knits with
+            relaxed joggers. Explore the best of functional fashion that doesn’t
+            compromise on style.
+          </p>
+          <a href="#">Continue Reading</a>
+        </div>
+        <h1>25/07</h1>
+      </div>
+      <div class="blog-box">
+        <div class="blog-img">
+          <img src="img/blog/b6.jpg" />
+        </div>
+        <div class="blog-det">
+          <h4>Autumn Aesthetics: Warm Drinks & Cozy Knits</h4>
+          <p>
+            Wrap yourself in a chunky knit, sip on your favorite fall drink, and
+            soak in the season’s colors. This cozy flatlay captures the essence
+            of autumn—earthy tones, rustic textures, and moments of calm. Get
+            inspired to slow down and style up this season.
+          </p>
+          <a href="#">Continue Reading</a>
+        </div>
+        <h1>30/11</h1>
+      </div>
+    </section>
+
+    <section id="pagination">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#"><i class="fa-solid fa-arrow-right-long"></i></a>
+    </section>
+
+    <section id="banner4">
+      <div class="texts">
+        <h4>Sign up for Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
+      </div>
+      <div class="email-sign">
+        <input class="email" type="text" placeholder=" Your Email-ID" /><button
+          class="sign"
+        >
+          Sign Up
+        </button>
+      </div>
+    </section>
+
+    <footer id="footer" class="section-p1">
+      <div class="col">
+        <img class="logo" src="img/logo.png" />
+        <h4>Contact</h4>
+        <h6><strong>Address: </strong> 22 Main St, New York, NY 10003, USA</h6>
+        <h6><strong>Phone: </strong>+01 2224 322</h6>
+        <h6><strong>Working Slots: </strong> 10:00 - 18:30, Mon-Sat</h6>
+        <div class="follow">
+          <h6>Follow Us On</h6>
+          <icon>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+          </icon>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="about.html">About us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms and Condition</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="cart.html">View Cart</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="col install">
+        <h4>Secured Payment Gateways</h4>
+        <img src="img/pay/pay.png" />
+      </div>
+      <div class="copyright">
+        <p>© 2025, Happy Shopping - ShopSphere By Swami</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var user = JSON.parse(localStorage.getItem("user"));
+        var cartLink = document.querySelector("#lg-bag a");
+        if (cartLink) {
+          cartLink.addEventListener("click", function (e) {
+            if (!user || !user.username) {
+              e.preventDefault();
+              alert("Please login/signup to access your cart!");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
